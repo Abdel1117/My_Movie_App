@@ -1,7 +1,8 @@
-import React from "react";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { getMovieByPath } from "@/app/utils/movieClient";
 import MovieDetails from "@/app/components/movie-details/MovieDetails";
+import { SimilarMovies } from "@/app/components/similar-movies/SimilarMovies";
 interface MovieIdPageProps {
   params: {
     id: string;
@@ -13,7 +14,6 @@ export const revalidate = 3600;
 
 export const MovieIdPage = async ({ params }: MovieIdPageProps) => {
   const { id } = await params;
-  console.log(id);
   const movie = await getMovieByPath(`/movie/${id}`);
 
   if (!movie.original_title) {
@@ -22,6 +22,9 @@ export const MovieIdPage = async ({ params }: MovieIdPageProps) => {
   return (
     <div>
       <MovieDetails movie={movie} />
+      <Suspense fallback={<p>Chargmeent en cours ... </p>}>
+        <SimilarMovies movieId={movie.id} />
+      </Suspense>
     </div>
   );
 };

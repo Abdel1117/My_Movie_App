@@ -1,6 +1,8 @@
-import React from "react";
+import React, { Suspense } from "react";
 import styles from "./MovieDetails.module.scss";
 import Image from "next/image";
+import { MovieCredits } from "../movie-credits/MovieCredits";
+import { SimilarMovies } from "../similar-movies/SimilarMovies";
 export default function MovieDetails({ movie }) {
   return (
     <div className={styles.details}>
@@ -26,6 +28,23 @@ export default function MovieDetails({ movie }) {
               ({new Date(movie.release_date).toLocaleDateString("fr-FR")})
             </span>
           </h1>
+          <p className={styles.production}>
+            Production :
+            <span>
+              {movie.production_companies
+                .map((company) => company.name)
+                .join(", ")}
+            </span>
+          </p>
+
+          <h2>Synopsis</h2>
+          <p className={styles.overview}>{movie.overview}</p>
+
+          <div className={styles.credits}>
+            <Suspense fallback="Chargement en cours ...">
+              <MovieCredits movieId={movie.id} />
+            </Suspense>
+          </div>
         </div>
       </div>
     </div>
