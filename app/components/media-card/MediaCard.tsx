@@ -13,7 +13,7 @@ export const MediaCard = ({ media }: MediaCardProps) => {
       <Link href={`/movies/${media.id}`}>
         <div className={styles.image}>
           <Image
-            src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}${media.poster_path}`}
+            src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${media.poster_path}`}
             alt="Media title"
             fill
           />

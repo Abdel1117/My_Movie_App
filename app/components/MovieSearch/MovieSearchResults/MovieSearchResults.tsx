@@ -11,7 +11,7 @@ export const MovieSearchResults = ({ movieResults }) => {
             <Image
               width={90}
               height={50}
-              src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}${movie.backdrop_path}`}
+              src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/500${movie.backdrop_path}`}
               alt={movie.title}
             />
             <p>{movie.title}</p>
