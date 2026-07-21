@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import { Header } from "./components/Header/Header";
+import { Header } from "../components/Header/Header";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { roboto, montserrat } from "./font";
+import { roboto, montserrat } from "../font";
 
 export const metadata: Metadata = {
   title: "Create Next App",

@@ -2,7 +2,6 @@ import React, { Suspense } from "react";
 import styles from "./MovieDetails.module.scss";
 import Image from "next/image";
 import { MovieCredits } from "../movie-credits/MovieCredits";
-import { SimilarMovies } from "../similar-movies/SimilarMovies";
 export default function MovieDetails({ movie }) {
   return (
     <div className={styles.details}>

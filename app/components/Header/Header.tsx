@@ -1,6 +1,4 @@
-import React from "react";
 import Link from "next/link";
-import { Roboto } from "next/font/google";
 import styles from "./header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
