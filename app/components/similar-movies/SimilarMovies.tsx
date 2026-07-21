@@ -1,4 +1,3 @@
-import React from "react";
 import { getMovieByPath } from "@/app/utils/movieClient";
 import styles from "./SimilarMovies.module.scss";
 import { MediaCard } from "../media-card/MediaCard";
@@ -22,7 +21,7 @@ export const SimilarMovies = async ({
     <div className={styles.similar}>
       <div className={styles.list}>
         {results?.slice(0, 6)?.map((movie: { id: number }) => (
-          <MediaCard media={movie} key={movie.id} />
+          <MediaCard media={movie} key={movie.id} locale={locale} />
         ))}
       </div>
     </div>

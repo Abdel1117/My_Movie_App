@@ -3,6 +3,7 @@ import styles from "./header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { MovieSearch } from "../MovieSearch/MovieSearch";
+import LangageSelector from "../../components/language-selector/LangageSelector";
 
 export const Header = () => {
   return (
@@ -30,6 +31,7 @@ export const Header = () => {
       <div>
         <FontAwesomeIcon icon={faUser} />
       </div>
+      <LangageSelector />
     </header>
   );
 };

@@ -16,7 +16,6 @@ export const revalidate = 3600;
 export const MovieIdPage = async ({ params }: MovieIdPageProps) => {
   const { id } = await params;
   const { locale } = await params;
-  console.log(locale);
   const movie = await getMovieByPath(`/movie/${id}`, [], locale);
 
   if (!movie.original_title) {

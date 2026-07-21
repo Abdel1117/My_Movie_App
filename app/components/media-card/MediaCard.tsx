@@ -5,12 +5,13 @@ import Link from "next/link";
 
 interface MediaCardProps {
   media: any;
+  locale: string;
 }
 
-export const MediaCard = ({ media }: MediaCardProps) => {
+export const MediaCard = ({ media, locale }: MediaCardProps) => {
   return (
     <div className={styles.card}>
-      <Link href={`/movies/${media.id}`}>
+      <Link href={`/${locale}/movies/${media.id}`}>
         <div className={styles.image}>
           <Image
             src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${media.poster_path}`}
