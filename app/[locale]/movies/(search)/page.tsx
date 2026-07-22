@@ -1,4 +1,3 @@
-import React from "react";
 import { SearchResults } from "./SearchResults";
 
 export const MoviesPage = async ({ searchParams, params }) => {
