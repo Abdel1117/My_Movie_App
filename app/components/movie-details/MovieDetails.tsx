@@ -2,7 +2,11 @@ import React, { Suspense } from "react";
 import styles from "./MovieDetails.module.scss";
 import Image from "next/image";
 import { MovieCredits } from "../movie-credits/MovieCredits";
-export default function MovieDetails({ movie }) {
+import { getDictionary } from "../../utils/dictionaries";
+
+export default async function MovieDetails({ movie, locale }) {
+  const i18n = await getDictionary(locale);
+  const dateLocale = locale === "fr" ? "fr-FR" : "en-US";
   return (
     <div className={styles.details}>
       <div className={styles.background}>
@@ -24,11 +28,11 @@ export default function MovieDetails({ movie }) {
           <h1>
             {movie.title}{" "}
             <span className={styles.releaseDate}>
-              ({new Date(movie.release_date).toLocaleDateString("fr-FR")})
+              ({new Date(movie.release_date).toLocaleDateString(dateLocale)})
             </span>
           </h1>
           <p className={styles.production}>
-            Production :
+            {i18n.movieDetails.production}
             <span>
               {movie.production_companies
                 .map((company) => company.name)
@@ -36,11 +40,11 @@ export default function MovieDetails({ movie }) {
             </span>
           </p>
 
-          <h2>Synopsis</h2>
+          <h2>{i18n.movieDetails.synopsis}</h2>
           <p className={styles.overview}>{movie.overview}</p>
 
           <div className={styles.credits}>
-            <Suspense fallback="Chargement en cours ...">
+            <Suspense fallback={i18n.common.loading}>
               <MovieCredits movieId={movie.id} />
             </Suspense>
           </div>

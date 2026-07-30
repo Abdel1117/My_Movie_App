@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getLocaleUrlToRedirect } from "./app/utils/i18n";
+import withAuth from "next-auth/middleware";
 
 export function middleware(request){
     const newLocaleUrl = getLocaleUrlToRedirect (request);
@@ -8,6 +9,10 @@ export function middleware(request){
         return NextResponse.redirect(newLocaleUrl);
 
     }
+    if(/\/[a-z]{2}\/user.*/.test(request.nextUrl.pathname)){
+        return withAuth(request)
+    }
+
 }
 
 export const config = {

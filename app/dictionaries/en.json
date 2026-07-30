@@ -1,0 +1,51 @@
+{
+    "popular": {
+        "title": "Most Popular"
+    },
+    "genres": {
+        "title": "Browse genres"
+    },
+    "header": {
+        "series": "Series",
+        "movies": "Movies"
+    },
+    "movieSearch": {
+        "placeholder": "Search for a title ..."
+    },
+    "searchSidebar": {
+        "allPrefix": "All",
+        "moviesDefault": "Movies"
+    },
+    "form": {
+        "filter": "Filter",
+        "releaseDate": "Release date",
+        "from": "From",
+        "to": "to",
+        "sortBy": "Sort by",
+        "popularity": "Popularity",
+        "rating": "Rating",
+        "voteCount": "Number of votes",
+        "search": "Search"
+    },
+    "media": {
+        "releasePrefix": "Released"
+    },
+    "movieDetails": {
+        "production": "Production:",
+        "synopsis": "Synopsis"
+    },
+    "notFound": {
+        "title": "404",
+        "message": "Oops, the page you are looking for does not exist."
+    },
+    "error": {
+        "title": "Error",
+        "message": "Oops! An error occurred while loading this page."
+    },
+    "series": {
+        "comingSoon": "Series page coming soon"
+    },
+    "common": {
+        "loading": "Loading ..."
+    }
+}

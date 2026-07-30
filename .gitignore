@@ -41,3 +41,12 @@ yarn-error.log*
 next-env.d.ts
 
 .env.*
+/app/generated/prisma
+
+
+# agent 
+.agents
+.claude 
+.windsurf
+.vscode 
+dev.db

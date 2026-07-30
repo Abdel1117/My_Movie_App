@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { MovieSearchResults } from "./MovieSearchResults/MovieSearchResults";
 import styles from "./MovieSearch.module.scss";
+import { useDictionary } from "@/app/hooks/useDictionary";
 
 export const MovieSearch = () => {
+  const i18n = useDictionary();
   const [moviesResults, setMoviesResults] = useState<any[]>([]);
   const [hasFocus, setHasFocus] = useState<boolean>(false);
 
@@ -23,7 +25,7 @@ export const MovieSearch = () => {
     <div className={styles.searchContainer}>
       <input
         type="text"
-        placeholder="Rechercher un titre ..."
+        placeholder={i18n.movieSearch.placeholder}
         onChange={(e) => debouncedSearch(e.target.value)}
         onBlur={() => setHasFocus(false)}
         onFocus={() => setHasFocus(true)}

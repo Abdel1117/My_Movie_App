@@ -1,9 +1,12 @@
 "use client";
+import { useDictionary } from "@/app/hooks/useDictionary";
+
 export default function Error() {
+  const i18n = useDictionary();
   return (
     <div className="error">
-      <h1>Erreur</h1>
-      <p>Oups ! Une erreur est survenue lors du chargement de cette page.</p>
+      <h1>{i18n.error.title}</h1>
+      <p>{i18n.error.message}</p>
     </div>
   );
 }

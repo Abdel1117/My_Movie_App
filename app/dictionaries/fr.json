@@ -1,0 +1,51 @@
+{
+    "popular": {
+        "title": "Les plus populaires"
+    },
+    "genres": {
+        "title": "Parcourir les genres"
+    },
+    "header": {
+        "series": "Séries",
+        "movies": "Films"
+    },
+    "movieSearch": {
+        "placeholder": "Rechercher un titre ..."
+    },
+    "searchSidebar": {
+        "allPrefix": "Tous les",
+        "moviesDefault": "Films"
+    },
+    "form": {
+        "filter": "Filtrer",
+        "releaseDate": "Date de sortie",
+        "from": "Du",
+        "to": "au",
+        "sortBy": "Trier par",
+        "popularity": "Popularité",
+        "rating": "Note",
+        "voteCount": "Nombre de notes",
+        "search": "Rechercher"
+    },
+    "media": {
+        "releasePrefix": "Le"
+    },
+    "movieDetails": {
+        "production": "Production :",
+        "synopsis": "Synopsis"
+    },
+    "notFound": {
+        "title": "404",
+        "message": "Oups, la page que vous cherchez n'existe pas."
+    },
+    "error": {
+        "title": "Erreur",
+        "message": "Oups ! Une erreur est survenue lors du chargement de cette page."
+    },
+    "series": {
+        "comingSoon": "Page Séries à venir"
+    },
+    "common": {
+        "loading": "Chargement en cours ..."
+    }
+}

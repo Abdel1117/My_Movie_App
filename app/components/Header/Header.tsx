@@ -4,8 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { MovieSearch } from "../MovieSearch/MovieSearch";
 import LangageSelector from "../../components/language-selector/LangageSelector";
+import { getDictionary } from "../../utils/dictionaries";
 
-export const Header = () => {
+interface HeaderProps {
+  locale: string;
+}
+
+export const Header = async ({ locale }: HeaderProps) => {
+  const i18n = await getDictionary(locale);
   return (
     <header className={`${styles.header} `}>
       <div className={styles.logo}>
@@ -17,10 +23,10 @@ export const Header = () => {
         <nav>
           <ul>
             <li>
-              <Link href="/series">Series</Link>
+              <Link href={`/${locale}/series`}>{i18n.header.series}</Link>
             </li>
             <li>
-              <Link href="/movies">Films</Link>
+              <Link href={`/${locale}/movies`}>{i18n.header.movies}</Link>
             </li>
           </ul>
         </nav>
@@ -29,7 +35,9 @@ export const Header = () => {
       <MovieSearch />
 
       <div>
-        <FontAwesomeIcon icon={faUser} />
+        <Link href={`/${locale}/user/profile`}>
+          <FontAwesomeIcon icon={faUser} />
+        </Link>
       </div>
       <LangageSelector />
     </header>
