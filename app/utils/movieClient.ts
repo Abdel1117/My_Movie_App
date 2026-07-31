@@ -13,3 +13,11 @@ export const getMovieByPath = async  (path : string, params = [], language : str
     
     return fetch(url).then((res) => res.json()).catch((e) => console.error("Une erreur est survenu lors de la récuparation des films populaires"));
 }
+
+
+export const getHydratedMovies = async (movieIds, language = "fr") => {
+    console.log(movieIds)
+    const moviePromises = movieIds?.map((movieId) => getMovieByPath(`/movie/${movieId}`, [], language));
+    const movies = await Promise.all(moviePromises)
+    return movies
+}

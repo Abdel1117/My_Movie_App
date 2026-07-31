@@ -3,6 +3,7 @@ import styles from "./MediaCard.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { getDictionary } from "../../utils/dictionaries";
+import { Like } from "./like/Like";
 
 interface MediaCardProps {
   media: any;
@@ -16,6 +17,7 @@ export const MediaCard = async ({ media, locale }: MediaCardProps) => {
     <div className={styles.card}>
       <Link href={`/${locale}/movies/${media.id}`}>
         <div className={styles.image}>
+          <Like movieId={media.id} />
           <Image
             src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${media.poster_path}`}
             alt="Media title"

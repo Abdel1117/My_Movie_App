@@ -4,6 +4,7 @@ import { Header } from "../components/Header/Header";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { roboto, montserrat } from "../font";
 import { availableLocales } from "../utils/i18n";
+import AuthProvider from "../components/auth-provider/AuthProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,7 +27,9 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={`${roboto.variable} ${montserrat.variable}`}>
         <Header locale={locale} />
-        <main>{children}</main>
+        <main>
+          <AuthProvider>{children}</AuthProvider>
+        </main>
       </body>
     </html>
   );

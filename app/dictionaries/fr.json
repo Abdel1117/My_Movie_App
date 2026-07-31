@@ -7,7 +7,8 @@
     },
     "header": {
         "series": "Séries",
-        "movies": "Films"
+        "movies": "Films",
+        "signup" : "Inscrivez vous"
     },
     "movieSearch": {
         "placeholder": "Rechercher un titre ..."

@@ -28,6 +28,9 @@ export const Header = async ({ locale }: HeaderProps) => {
             <li>
               <Link href={`/${locale}/movies`}>{i18n.header.movies}</Link>
             </li>
+            <li>
+              <Link href={`/${locale}/signup`}>{i18n.header.signup}</Link>
+            </li>
           </ul>
         </nav>
       </div>

@@ -13,10 +13,10 @@ datasource db {
 }
 
 model User {
-  id       Int         @id @default(autoincrement())
-  email    String      @unique
-  password String
-  posts    MovieLike[]
+  id         Int         @id @default(autoincrement())
+  email      String      @unique
+  password   String
+  MovieLikes MovieLike[]
 }
 
 model MovieLike {
